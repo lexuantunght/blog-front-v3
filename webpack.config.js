@@ -7,10 +7,13 @@ const CircularDependencyPlugin = require('circular-dependency-plugin');
 
 module.exports = {
     entry: './src/index.tsx',
-    output: { path: path.join(__dirname, 'build'), filename: 'index.bundle.js' },
+    output: { path: path.join(__dirname, 'build'), filename: 'index.bundle.js', clean: true },
     mode: process.env.NODE_ENV || 'development',
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
+        alias: {
+            '@shiba': path.resolve(__dirname, './src/common/shiba'),
+        },
     },
     devServer: {
         historyApiFallback: {
@@ -47,6 +50,11 @@ module.exports = {
     optimization: {
         minimize: true,
         minimizer: [new CssMinimizerPlugin(), new TerserWebpackPlugin()],
+        removeAvailableModules: true,
+        removeEmptyChunks: true,
+        mergeDuplicateChunks: true,
+        emitOnErrors: false,
+        concatenateModules: true,
     },
     plugins: [
         new HtmlWebpackPlugin({

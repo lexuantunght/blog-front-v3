@@ -1,7 +1,8 @@
 import React from 'react';
+import Button from '@shiba/Button';
 
 const App = () => {
-    return <div>Hello world</div>;
+    return <div>Lê Xuân Tùng</div>;
 };
 
 export default App;
