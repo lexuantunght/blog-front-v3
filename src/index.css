@@ -1,3 +1,5 @@
-@import 'primereact/resources/themes/lara-light-blue/theme.css';
-@import 'primereact/resources/primereact.min.css';
-@import 'primeicons/primeicons.css';
+@import url('primereact/resources/themes/lara-light-blue/theme.css');
+@import url('primereact/resources/primereact.min.css');
+@import url('primeicons/primeicons.css');
+
+@import url('./presentation/App.css');
