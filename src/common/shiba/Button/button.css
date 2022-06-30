@@ -1,0 +1,52 @@
+.sb-button {
+    border-radius: var(--border-radius);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--pading-y) var(--padding-x);
+    transition: 0.3s;
+}
+.sb-button:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.sb-button.sb-button-primary:enabled:hover {
+    background-color: var(--primary-hover);
+}
+.sb-button.sb-button-primary {
+    background-color: var(--primary-color);
+    color: var(--white-text);
+}
+
+.sb-button.sb-button-secondary:enabled:hover {
+    background-color: var(--secondary-hover);
+}
+.sb-button.sb-button-secondary {
+    background-color: var(--secondary-color);
+    color: var(--white-text);
+}
+
+.sb-button.sb-button-error:enabled:hover {
+    background-color: var(--error-hover);
+}
+.sb-button.sb-button-error {
+    background-color: var(--error-color);
+    color: var(--white-text);
+}
+
+.sb-button.sb-button-success:enabled:hover {
+    background-color: var(--success-hover);
+}
+.sb-button.sb-button-success {
+    background-color: var(--success-color);
+    color: var(--white-text);
+}
+
+.sb-button.sb-button-warning:enabled:hover {
+    background-color: var(--warning-hover);
+}
+.sb-button.sb-button-warning {
+    background-color: var(--warning-color);
+    color: var(--white-text);
+}

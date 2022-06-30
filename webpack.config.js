@@ -61,7 +61,9 @@ module.exports = {
             template: path.join(__dirname, 'public', 'index.html'),
             favicon: path.join(__dirname, 'public', 'favicon.ico'),
         }),
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: '[name].min.css',
+        }),
         new CircularDependencyPlugin(),
     ],
 };

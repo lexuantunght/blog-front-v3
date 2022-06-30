@@ -1,7 +1,15 @@
 import React from 'react';
 
-const Button = () => {
-    return <div></div>;
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    variant?: 'primary' | 'secondary' | 'error' | 'success' | 'warning';
+}
+
+const Button = ({ variant = 'primary', children, ...rest }: ButtonProps) => {
+    return (
+        <button {...rest} className={`sb-button sb-button-${variant}`}>
+            {children}
+        </button>
+    );
 };
 
 export default Button;

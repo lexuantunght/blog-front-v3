@@ -3,14 +3,17 @@
     src: url('/src/common/resources/fonts/OptimisticDisplayRegular.woff2') format('woff2');
 }
 
+* {
+    font-family: 'Optimistic Display', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 300;
+}
+
 body {
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: var(--surface-ground);
     color: var(--text-color);
-    font-family: 'Optimistic Display', system-ui, -apple-system, sans-serif;
-    font-size: 16px;
-    line-height: 28px;
-    font-weight: 300;
 }
