@@ -1,5 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const CircularDependencyPlugin = require('circular-dependency-plugin');
 
 module.exports = {
     entry: './src/index.tsx',
@@ -28,18 +32,28 @@ module.exports = {
             },
             {
                 test: /\.(css|scss|sass)$/,
-                use: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader'],
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
                 use: ['file-loader'],
             },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+            },
         ],
+    },
+    optimization: {
+        minimize: true,
+        minimizer: [new CssMinimizerPlugin(), new TerserWebpackPlugin()],
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'public', 'index.html'),
             favicon: path.join(__dirname, 'public', 'favicon.ico'),
         }),
+        new MiniCssExtractPlugin(),
+        new CircularDependencyPlugin(),
     ],
 };
