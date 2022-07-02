@@ -1,0 +1,76 @@
+.button {
+    border-radius: var(--border-radius);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--pading-y) var(--padding-x);
+    transition: 0.3s;
+}
+.button:focus {
+    outline: none;
+    border: none;
+}
+.button:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.button.primary:enabled:hover {
+    background-color: var(--primary-hover);
+}
+.button.primary {
+    background-color: var(--primary-color);
+    color: var(--white-text);
+}
+.button.primary:focus {
+    box-shadow: 0 0 0 2px var(--white-text), 0 0 0 4px var(--primary-outline),
+        0 1px 2px 0 var(--black-text);
+}
+
+.button.secondary:enabled:hover {
+    background-color: var(--secondary-hover);
+}
+.button.secondary {
+    background-color: var(--secondary-color);
+    color: var(--white-text);
+}
+.button.secondary:focus {
+    box-shadow: 0 0 0 2px var(--white-text), 0 0 0 4px var(--secondary-outline),
+        0 1px 2px 0 var(--black-text);
+}
+
+.button.error:enabled:hover {
+    background-color: var(--error-hover);
+}
+.button.error {
+    background-color: var(--error-color);
+    color: var(--white-text);
+}
+.button.error:focus {
+    box-shadow: 0 0 0 2px var(--white-text), 0 0 0 4px var(--error-outline),
+        0 1px 2px 0 var(--black-text);
+}
+
+.button.success:enabled:hover {
+    background-color: var(--success-hover);
+}
+.button.success {
+    background-color: var(--success-color);
+    color: var(--white-text);
+}
+.button.success:focus {
+    box-shadow: 0 0 0 2px var(--white-text), 0 0 0 4px var(--success-outline),
+        0 1px 2px 0 var(--black-text);
+}
+
+.button.warning:enabled:hover {
+    background-color: var(--warning-hover);
+}
+.button.warning {
+    background-color: var(--warning-color);
+    color: var(--white-text);
+}
+.button.warning:focus {
+    box-shadow: 0 0 0 2px var(--white-text), 0 0 0 4px var(--warning-outline),
+        0 1px 2px 0 var(--black-text);
+}

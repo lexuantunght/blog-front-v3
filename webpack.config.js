@@ -34,8 +34,25 @@ module.exports = {
                 use: ['ts-loader'],
             },
             {
+                test: /\.module\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1,
+                            modules: {
+                                localIdentName: 'sb-[local]-[hash:base64]',
+                            },
+                        },
+                    },
+                    'sass-loader',
+                ],
+            },
+            {
                 test: /\.(css|scss|sass)$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+                exclude: /\.module\.css$/,
             },
             {
                 test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,

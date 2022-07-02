@@ -17,3 +17,16 @@ body {
     background-color: var(--surface-ground);
     color: var(--text-color);
 }
+
+.app-header {
+    height: 4rem;
+    display: grid;
+    align-items: center;
+    gap: 0 1rem;
+}
+.app-header > .app-header-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
