@@ -18,5 +18,9 @@
     --padding-x: 0.75rem;
     --pading-y: 0.25rem;
     --white-text: #ffffff;
+    --background: #ffffff;
     --black-text: #000000;
+    --line-color: #ced4da;
+    --transition-time: 0.2s;
+    --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }

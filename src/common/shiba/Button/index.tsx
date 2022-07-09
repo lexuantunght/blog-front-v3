@@ -3,11 +3,21 @@ import styles from './button.module.css';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: 'primary' | 'secondary' | 'error' | 'success' | 'warning';
+    mode?: 'text' | 'fill' | 'outlined';
 }
 
-const Button = ({ variant = 'primary', children, ...rest }: ButtonProps) => {
+const Button = ({
+    variant = 'primary',
+    mode = 'fill',
+    children,
+    className = '',
+    ...rest
+}: ButtonProps) => {
     return (
-        <button {...rest} className={`${styles.button} ${styles[variant]}`}>
+        <button
+            {...rest}
+            className={`${styles.button} ${styles[variant]} ${styles[mode]} ${className}`}
+        >
             {children}
         </button>
     );
